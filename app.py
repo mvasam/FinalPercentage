@@ -29,8 +29,10 @@ def exceptionalH(value):
 def hello_world():
     error_message=''
     per=0
-    fs=[]
-    ts=[]
+    fsobtained=0
+    fstotal=0
+    tsobtained=0
+    tstotal=0
     if request.method=='POST':
         if 'm1' in request.form:
             m1=request.form.get('m1')
@@ -39,8 +41,8 @@ def hello_world():
                 t1=request.form.get('t1')
                 t1=exceptionalH(t1)
                 if(t1>0):
-                    per=Percentage(m1,t1)
-                    fs.append(per)
+                    fsobtained+=m1
+                    fstotal+=t1
 
         if 'm2' in request.form:
             per=0
@@ -50,8 +52,8 @@ def hello_world():
                 t2=request.form.get('t2')
                 t2=exceptionalH(t2)
                 if(t2>0):
-                    per=Percentage(m2,t2)
-                    fs.append(per)
+                    fsobtained+=m2
+                    fstotal+=t2
 
         if 'm3' in request.form:
             per=0
@@ -61,8 +63,8 @@ def hello_world():
                 t3=request.form.get('t3')
                 t3=exceptionalH(t3)
                 if(t3>0):
-                    per=Percentage(m3,t3)
-                    fs.append(per)
+                    fsobtained+=m3
+                    fstotal+=t3
 
         if 'm4' in request.form:
             per=0
@@ -72,8 +74,8 @@ def hello_world():
                 t4=request.form.get('t4')
                 t4=exceptionalH(t4)
                 if(t4>0):
-                    per=Percentage(m4,t4)
-                    ts.append(per)
+                    tsobtained+=m4
+                    tstotal+=t4
 
         if 'm5' in request.form:
             per=0
@@ -83,8 +85,9 @@ def hello_world():
                 t5=request.form.get('t5')
                 t5=exceptionalH(t5)
                 if(t5>0):
-                    per=Percentage(m5,t5)
-                    ts.append(per)
+                    tsobtained+=m5
+                    tstotal+=t5
+                
 
         if 'm6' in request.form:
             per=0
@@ -94,9 +97,9 @@ def hello_world():
                 t6=request.form.get('t6')
                 t6=exceptionalH(t6)
                 if(t6>0):
-                    per=Percentage(m6,t6)
-                    ts.append(per)
-
+                    tsobtained+=m6
+                    tstotal+=t6
+                    
         if 'm7' in request.form:
             per=0
             m7=request.form.get('m7')
@@ -105,19 +108,15 @@ def hello_world():
                 t7=request.form.get('t7')
                 t7=exceptionalH(t7)
                 if(t7>0):
-                    per=Percentage(m7,t7)
-                    ts.append(per)
-    n1=len(fs)
-    n2=len(ts)
-    f1=0
-    f2=0
-    for i in fs:
-        f1+=i
-    for i in ts:
-        f2+=i
-    f1=exceptionalZ(f1,n1)/2
-    f2=exceptionalZ(f2,n2)
-    final=((f1+f2)*10)/15
+                    tsobtained+=m7
+                    tstotal+=t7
+    
+   
+    fsobtained=fsobtained/2
+    fstotal=fstotal/2
+    obtained=fsobtained+tsobtained
+    total=fstotal+tstotal
+    final=Percentage(obtained,total)
     return render_template("index.html",final=final)
 if __name__=='__main__':
     app.run(debug=True)
