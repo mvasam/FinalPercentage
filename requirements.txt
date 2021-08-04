@@ -1,4 +1,4 @@
-python==3.9.2
+python==3.8.5
 click==8.0.1
 colorama==0.4.4
 Flask==2.0.1
