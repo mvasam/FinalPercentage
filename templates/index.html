@@ -1,0 +1,92 @@
+<style>
+
+  h1
+  {
+    color: red;
+    text-align: center;
+  }
+  h2
+  {
+    color: red;
+    text-align: center;
+  }
+  h3
+  {
+    color: red;
+    text-align: center;
+  }
+  p
+    {
+      color: brown;
+      text-algin: right;
+    }
+    body {
+      background-image: url({{ url_for('static', filename='KU.jpeg') }})
+      opacity: 0.1;
+      color: purple;
+  }
+</style>
+<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+
+<h1>Kakatiya University College of Engineering and Technology</h1>
+<h2> Calculate your Overall Percentage</h2>
+<h3> Enter your seven semester marks</h3>
+<body>
+  <form class="pure-form pure-form-aligned" method="POST" action="/">
+      <fieldset>
+          <div class="pure-control-group">
+              <label for="aligned-name"> I year I semester</label>
+              <input type="number" id="aligned-name" name=m1 placeholder="Marks Obtained" />
+              <input type="number" id="aligned-name" name=t1 placeholder="Total Marks" />
+              <span class="pure-form-message-inline">This is a required field.</span>
+          </div>
+          <div class="pure-control-group">
+              <label for="aligned-name"> II year I semester</label>
+              <input type="number" id="aligned-name" name=m2 placeholder="Marks Obtained" />
+              <input type="number" id="aligned-name" name=t2 placeholder="Total Marks" />
+              <span class="pure-form-message-inline">This is a required field.</span>
+          </div>
+          <div class="pure-control-group">
+              <label for="aligned-name"> II year II semester</label>
+              <input type="number" id="aligned-name" name=m3 placeholder="Marks Obtained" />
+              <input type="number" id="aligned-name" name=t3 placeholder="Total Marks" />
+              <span class="pure-form-message-inline">This is a required field.</span>
+          </div>
+          <div class="pure-control-group">
+              <label for="aligned-name">III year I semester</label>
+              <input type="number" id="aligned-name" name=m4 placeholder="Marks Obtained" />
+              <input type="number" id="aligned-name" name=t4 placeholder="Total Marks" />
+              <span class="pure-form-message-inline">This is a required field.</span>
+          </div>
+          <div class="pure-control-group">
+              <label for="aligned-name"> III year	II semester</label>
+              <input type="number" id="aligned-name" name=m5 placeholder="Marks Obtained" />
+              <input type="number" id="aligned-name" name=t5 placeholder="Total Marks" />
+              <span class="pure-form-message-inline">This is a required field.</span>
+          </div>
+          <div class="pure-control-group">
+              <label for="aligned-name"> IV year I semester</label>
+              <input type="number" id="aligned-name" name=m6  placeholder="Marks Obtained" />
+              <input type="number" id="aligned-name" name=t6 placeholder="Total Marks" />
+              <span class="pure-form-message-inline">This is a required field.</span>
+          </div>
+          <div class="pure-control-group">
+              <label for="aligned-name"> 	IV year II semester</label>
+              <input type="number" id="aligned-name" name=m7 placeholder="Marks Obtained" />
+              <input type="number" id="aligned-name" name=t7 placeholder="Total Marks" />
+              <span class="pure-form-message-inline">This is a required field.</span>
+          </div>
+          <div class="pure-controls">
+              <label for="aligned-cb" class="pure-checkbox">
+                  <input type="checkbox" id="aligned-cb" /> Above furnished information doesnot contain unrelaible data.
+              </label>
+              <button type="submit" class="pure-button pure-button-primary">Submit</button>
+          </div>
+      </fieldset>
+  </form>
+<h1>Overall Percentage is :{{final}}</h1>
+<p> Overall Percentage is Calculated by considering 50% of marks in aggregate of 1st and 2nd year and 100% of marks in aggregate in 3rd and 4th year put together.</p>
+<p>The maths involved may contain errors. This page creator is not responsible if final Percentage differs with the calculated Percentage.</p>
+</body>
+
+<p> MANISHA</p>
